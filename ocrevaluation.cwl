@@ -16,10 +16,20 @@ inputs:
     type: File
     inputBinding:
       prefix: -gt
+      position: 1
+  gt_encoding:
+    type: string?
+    inputBinding:
+      position: 2
   ocr:
     type: File
     inputBinding:
       prefix: -ocr
+      position: 3
+  ocr_encoding:
+    type: string?
+    inputBinding:
+      position: 4
 
 outputs:
   out_file:
