@@ -19,6 +19,7 @@ inputs:
       position: 1
   gt_encoding:
     type: string?
+    default: utf-8
     inputBinding:
       position: 2
   ocr:
@@ -28,6 +29,7 @@ inputs:
       position: 3
   ocr_encoding:
     type: string?
+    default: utf-8
     inputBinding:
       position: 4
 
