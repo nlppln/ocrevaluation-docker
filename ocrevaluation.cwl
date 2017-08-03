@@ -1,37 +1,29 @@
 #!/usr/bin/env cwlrunner
-cwlVersion: cwl:v1.0
+cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: ["java", "-cp", "/ocrevalUAtion.jar", "eu.digitisation.Main"]
+baseCommand: ["java", "-cp", "/ocrevalUAtion/target/ocrevaluation.jar", "eu.digitisation.Main"]
 
 requirements:
   - class: DockerRequirement
-    dockerPull: nlppln/ocrevaluation
+    dockerPull: ocrevaluation
 
 arguments:
-  - prefix: "-d"
-    valueFrom: $(runtime.outdir)
+  - prefix: "-o"
+    valueFrom: $(runtime.outdir)/$(inputs.gt.nameroot)_out.html
 
 inputs:
   gt:
     type: File
     inputBinding:
       prefix: -gt
-      position: 1
-  gt_encoding:
-    type: string?
-    default: utf-8
-    inputBinding:
-      position: 2
   ocr:
     type: File
     inputBinding:
       prefix: -ocr
-      position: 3
-  ocr_encoding:
+  encoding:
     type: string?
-    default: utf-8
     inputBinding:
-      position: 4
+      prefix: -e
 
 outputs:
   out_file:

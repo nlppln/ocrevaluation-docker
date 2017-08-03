@@ -1,8 +1,21 @@
-FROM java:7
+FROM ubuntu:16.04
 
-MAINTAINER j.vanderzwaan@esciencecenter.nl
+LABEL maintainer "j.vanderzwaan@esciencecenter.nl"
 
-ADD https://bintray.com/impactocr/maven/download_file?file_path=eu%2Fdigitisation%2FocrevalUAtion%2F1.3.0%2FocrevalUAtion-1.3.0-jar-with-dependencies.jar /ocrevalUAtion.jar
-RUN chmod 644 /ocrevalUAtion.jar
-
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y \
+    build-essential \
+    git \
+    default-jre \
+    default-jdk \
+    maven \
+    && apt-get autoremove \
+		&& apt-get clean
+WORKDIR /
+RUN git clone https://github.com/impactcentre/ocrevalUAtion.git && cd ocrevalUAtion
+ADD userProperties.xml /ocrevalUAtion/userProperties.xml
+WORKDIR /ocrevalUAtion
+RUN mvn package
+RUN chmod 644 /ocrevalUAtion/target/ocrevaluation.jar
 CMD /bin/bash
