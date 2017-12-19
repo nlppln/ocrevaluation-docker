@@ -24,6 +24,19 @@ inputs:
     type: string?
     inputBinding:
       prefix: -e
+  ignore_case:
+    type: boolean?
+    inputBinding:
+      prefix: -ic
+  ignore_diacritics:
+    type: boolean?
+    inputBinding:
+      prefix: -id
+  ignore_punctuation:
+    type: boolean?
+    inputBinding:
+      prefix: -ip
+
 
 outputs:
   out_file:
