@@ -1,4 +1,4 @@
-#!/usr/bin/env cwlrunner
+#!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
 baseCommand: ["java", "-cp", "/ocrevalUAtion/target/ocrevaluation.jar", "eu.digitisation.Main"]
