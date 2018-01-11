@@ -5,7 +5,7 @@ baseCommand: ["java", "-cp", "/ocrevalUAtion/target/ocrevaluation.jar", "eu.digi
 
 requirements:
   - class: DockerRequirement
-    dockerPull: ocrevaluation
+    dockerPull: nlppln/ocrevaluation-docker
 
 arguments:
   - prefix: "-o"
