@@ -40,7 +40,6 @@ inputs:
 
 outputs:
   out_file:
-    - null
-    - type: File
-      outputBinding:
-        glob: $(inputs.gt.nameroot)_out.html
+    type: ["null", File]
+    outputBinding:
+      glob: $(inputs.gt.nameroot)_out.html
