@@ -11,6 +11,8 @@ arguments:
   - prefix: "-o"
     valueFrom: $(runtime.outdir)/$(inputs.gt.nameroot)_out.html
 
+successCodes: [1]
+
 inputs:
   gt:
     type: File
