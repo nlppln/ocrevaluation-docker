@@ -6,6 +6,31 @@ baseCommand: ["java", "-cp", "/ocrevalUAtion/target/ocrevaluation.jar", "eu.digi
 requirements:
   - class: DockerRequirement
     dockerPull: nlppln/ocrevaluation-docker
+  - class: InitialWorkDirRequirement
+    listing:
+      - entryname: $(inputs.gt.nameroot)_out.html
+        entry: |
+          <table border="1">
+          <tr>
+          <td>CER</td><td>n/a</td>
+          </tr>
+          <tr>
+          <td>WER</td><td>n/a</td>
+          </tr>
+          <tr>
+          <td>WER (order independent)</td><td>n/a</td>
+          </tr>
+          </table>
+          <table border="1">
+          </table>
+          <table border="1">
+          <tr>
+          <td>Character</td><td>Hex code</td><td>Total</td><td>Spurious</td><td>Confused</td><td>Lost</td><td>Error rate</td>
+          </tr>
+          <tr>
+          <td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td>
+          </tr>
+          </table>
 
 arguments:
   - prefix: "-o"
@@ -42,6 +67,6 @@ inputs:
 
 outputs:
   out_file:
-    type: ["null", File]
+    type: File
     outputBinding:
       glob: $(inputs.gt.nameroot)_out.html
