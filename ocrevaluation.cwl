@@ -10,6 +10,7 @@ requirements:
     listing:
       - entryname: $(inputs.gt.nameroot)_out.html
         entry: |
+          <h2>General results</h2>
           <table border="1">
           <tr>
           <td>CER</td><td>n/a</td>
@@ -21,8 +22,10 @@ requirements:
           <td>WER (order independent)</td><td>n/a</td>
           </tr>
           </table>
+          <h2>Difference spotting</h2>
           <table border="1">
           </table>
+          <h2>Error rate per character and type</h2>
           <table border="1">
           <tr>
           <td>Character</td><td>Hex code</td><td>Total</td><td>Spurious</td><td>Confused</td><td>Lost</td><td>Error rate</td>
