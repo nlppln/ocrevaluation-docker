@@ -6,34 +6,6 @@ baseCommand: ["java", "-cp", "/ocrevalUAtion/target/ocrevaluation.jar"]
 requirements:
   - class: DockerRequirement
     dockerPull: nlppln/ocrevaluation-docker
-  - class: InitialWorkDirRequirement
-    listing:
-      - entryname: $(inputs.gt.nameroot)_out.html
-        entry: |
-          <h2>General results</h2>
-          <table border="1">
-          <tr>
-          <td>CER</td><td>n/a</td>
-          </tr>
-          <tr>
-          <td>WER</td><td>n/a</td>
-          </tr>
-          <tr>
-          <td>WER (order independent)</td><td>n/a</td>
-          </tr>
-          </table>
-          <h2>Difference spotting</h2>
-          <table border="1">
-          </table>
-          <h2>Error rate per character and type</h2>
-          <table border="1">
-          <tr>
-          <td>Character</td><td>Hex code</td><td>Total</td><td>Spurious</td><td>Confused</td><td>Lost</td><td>Error rate</td>
-          </tr>
-          <tr>
-          <td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td>
-          </tr>
-          </table>
 
 arguments:
   - prefix: "-o"
@@ -41,8 +13,6 @@ arguments:
     position: 4
   - valueFrom: eu.digitisation.Main
     position: 1
-
-successCodes: [1]
 
 inputs:
   gt:
