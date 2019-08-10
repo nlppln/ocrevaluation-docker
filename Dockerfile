@@ -17,5 +17,5 @@ RUN git clone https://github.com/impactcentre/ocrevalUAtion.git && cd ocrevalUAt
 ADD userProperties.xml /ocrevalUAtion/userProperties.xml
 WORKDIR /ocrevalUAtion
 RUN mvn package
-RUN chmod 777 /ocrevalUAtion/target/ocrevaluation.jar
+RUN chmod 644 /ocrevalUAtion/target/ocrevaluation.jar
 CMD /bin/bash
